@@ -3,7 +3,7 @@
 #   data
 #
 .data
-c:  .word 0
+c:  .word 0     # "füllt Speicher mit den Vorzeichenbehafteten 32 Bit Wort" --> Variable c in Mem mit Wert 0
 str1: .asciiz "Enter A value: "
 str2: .asciiz "Enter B value: "
 str3: .asciiz "2 * A + 3 * B equals: "
@@ -65,3 +65,4 @@ addInts:
     
     #beendet das Programm , 10 steht für exit
     li $v0, 10
+    syscall
