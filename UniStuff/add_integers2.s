@@ -23,8 +23,7 @@ addInts:
     li $v0, 4           # saves the syscall 4 --> print_string into $v0
     syscall             # calls the code in $v0 --> print_string($a0)
 
-    # Syntax used for reading a value of console
-    # and storing in $t0
+    # Syntax used for reading a value of console and storing in $t0
     li $v0, 5           # loads code 5 into $v0 --> read_int
     syscall
     move $t0, $v0       # moves the read int into a temporary register
