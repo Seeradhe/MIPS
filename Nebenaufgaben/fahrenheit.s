@@ -7,6 +7,7 @@
 # data
 #
 .data
+const0: .float 0.0
 const5: .float 5.0
 const9: .float 9.0
 const32: .float 32.0
@@ -42,15 +43,12 @@ main:
 
     # test if value in $f0 is lower than -273.15 °C, if so set to -273.15
     lwc1 $f1, minimum
-    sub.s $f0, $f0, $f1
+    c.lt.s $f1, $f0
 
-    bgt $f0, $zero, fine 
-
-    lwc1 $f0, minimum
-    j  finish
-
-    fine:
-    add.s $f0, $f1, $f0
+    bc1t finish
+    
+    lwc1 $f3, const0
+    add.s $f0, $f1, $f3
 
     finish:
 
