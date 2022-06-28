@@ -1,8 +1,3 @@
-# float f2c (float fahr)
-# {
-#   return cel = ((5.0/9.0) * (fahr - 32.0));
-# }
-
 #
 # data
 #
@@ -44,12 +39,9 @@ main:
     # test if value in $f0 is lower than -273.15 °C, if so set to -273.15
     lwc1 $f1, minimum
     c.lt.s $f1, $f0
-
     bc1t finish
-    
     lwc1 $f3, const0
     add.s $f0, $f1, $f3
-
     finish:
 
     # print output
